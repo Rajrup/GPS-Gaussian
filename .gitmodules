@@ -4,6 +4,8 @@
 [submodule "gaussian-splatting"]
 	path = gaussian-splatting
 	url = https://github.com/graphdeco-inria/gaussian-splatting.git
+	ignore = untracked
 [submodule "RAFT-Stereo"]
 	path = RAFT-Stereo
 	url = https://github.com/princeton-vl/RAFT-Stereo.git
+	ignore = untracked
