@@ -45,13 +45,14 @@ def render(data, idx, pts_xyz, pts_rgb, rotations, scales, opacity, bg_color):
         sh_degree=3,
         campos=data['novel_view']['camera_center'][idx],
         prefiltered=False,
-        debug=False
+        debug=False,
+        antialiasing=True
     )
 
     rasterizer = GaussianRasterizer(raster_settings=raster_settings)
 
     # Rasterize visible Gaussians to image, obtain their radii (on screen).
-    rendered_image, _ = rasterizer(
+    rendered_image, radii, _ = rasterizer(
         means3D=pts_xyz,
         means2D=screenspace_points,
         shs=None,
